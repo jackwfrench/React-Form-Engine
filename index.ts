@@ -10,7 +10,6 @@ import FormInput from './input/formInput';
 import FormInputNumber from './input/formInputNumber';
 import FormTextArea from './input/formTextArea';
 import FormRadioButtons from './input/formRadioButtons';
-import FormSubmit from '../views/user/form/tmv/tmvFormSubmit';
 
 // form layout components
 export { FormSection as Section};
@@ -27,6 +26,5 @@ export { FormInputNumber as InputNumber };
 export { FormTextArea as TextArea};
 export { FormRadioButtons as RadioButtons };
 export { FormDatePicker as DatePicker };
-export { FormSubmit as Submit };
 
 
