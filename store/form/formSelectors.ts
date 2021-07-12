@@ -1,5 +1,5 @@
-import { TFormQuestion, TForm } from '@AuctorForm/core/form.core';
-import { TValidateInputStatus } from '@AuctorForm/core/form.rules';
+import { TFormQuestion, TForm } from '../../core/form.core';
+import { TValidateInputStatus } from '../../core/form.rules';
 
 /**
  * Get Question Selector

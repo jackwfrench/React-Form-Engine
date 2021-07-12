@@ -2,6 +2,7 @@
  * FORM ACTION TYPES
  */
 export const CLEAR_FORM = 'form/clearForm';
+export const CLEAR_FORM_VALUES ='form/clearFormValues';
 export const CREATE_FORM = 'form/create';
 
 /**

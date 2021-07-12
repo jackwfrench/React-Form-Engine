@@ -1,5 +1,5 @@
 import { TFormQuestion, TFormQuestionValueType } from '@AuctorForm/core/form.core';
-import { TValidateInputStatus } from '@AuctorForm/core/form.rules';
+import { TValidateInputStatus } from '../../core/form.rules';
 import * as actionTypes from './formActionTypes';
 
 export interface IQuestionAction extends IAction {
@@ -21,6 +21,7 @@ export interface ICreateFormAction extends IAction {
 type TFormQuestionAction = IQuestionAction | ISaveQuestionValueAction | IQuestionValidationStatus | ICreateFormAction;
 
 export const clearForm = (): IAction => { return { type: actionTypes.CLEAR_FORM }; };
+export const clearFormValues = (): IAction => { return { type: actionTypes.CLEAR_FORM_VALUES }; };
 export const createForm = (formType: string): ICreateFormAction => { return { type: actionTypes.CREATE_FORM, payload: { formType: formType } };};
 export const saveFormQuestion = (question: TFormQuestion): IQuestionAction => { return { type: actionTypes.SAVE_QUESTION, payload: question }; };
 export const createFormQuestion = (question: TFormQuestion): IQuestionAction => { return { type: actionTypes.CREATE_QUESTION, payload: question }; };
@@ -30,6 +31,7 @@ export type TFormActions = TFormQuestionAction;
 
 const FormActions = {
   clearForm,
+  clearFormValues,
   saveFormQuestion,
   createFormQuestion,
   saveFormQuestionValue

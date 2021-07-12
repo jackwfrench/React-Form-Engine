@@ -25,8 +25,8 @@ const formReducer = (state: TForm, action: TFormActions): TForm => {
     const createQuestionAction = action as ISaveQuestionValueAction;
     return {
       ...state,
-      questions: [...state.questions.map(question => 
-        question.id === createQuestionAction.payload.questionId ? {...question, value: createQuestionAction.payload.value} : question)]
+      questions: state.questions.map(question => 
+        question.id === createQuestionAction.payload.questionId ? {...question, value: createQuestionAction.payload.value} : question)
     };
   }
   case actionTypes.UPDATE_QUESTION_VALIDATION_STATUS: {
@@ -51,6 +51,15 @@ const formReducer = (state: TForm, action: TFormActions): TForm => {
   }
   case actionTypes.CLEAR_FORM: {
     return { ...initialState.form };
+  }
+  case actionTypes.CLEAR_FORM_VALUES: {
+    return {
+      ...state,
+      questions: state.questions.map(question => {
+        const clearQuestion = {...question, value: null};
+        return clearQuestion;
+      })
+    };
   }
   default: {
     return { ...state };

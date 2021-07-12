@@ -10,7 +10,7 @@ export enum TFormQuestionValueType {
   email = 'email'
 }
 
-export type TFormQuestionValue = string | number | undefined;
+export type TFormQuestionValue = string | number | null;
 
 export type TFormQuestion = {
   id: number;

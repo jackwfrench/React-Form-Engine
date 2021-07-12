@@ -60,9 +60,9 @@ class FormInput extends React.Component<IFormInputProps> {
             }}
           >
             <Input 
-              size={this.props.size || 'middle'} 
-              value={this.props.defaultValue}
-              onBlur={this.changeValue}
+              size={this.props.size || 'middle'}
+              onChange={this.changeValue}
+              value={this.props.selectors.getQuestion.value as string}
             />
           </Form.Item>
         </div>
