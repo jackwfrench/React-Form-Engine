@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Input, Form } from 'antd';
-import { RenderLabel, questionInit,IActionProps, IBaseInputProps, IStateProps, mapDispatchToProps, mapStateToProps, TProps } from './baseInput';
+import { questionInit, IActionProps, IBaseInputProps, IStateProps, mapDispatchToProps, mapStateToProps, TProps } from './baseInput';
 import FormConditional from '../layout/formConditional';
 import { TState } from '../../store/appState';
-import { TFormQuestion, TFormQuestionValueType } from 'AuctorForm/core/form.core';
+import { TFormQuestion, TFormQuestionValueType } from '../core/form.core';
 
 const { TextArea } = Input;
 

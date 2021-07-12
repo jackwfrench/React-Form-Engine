@@ -6,7 +6,7 @@ import * as Date from '../../core/helpers/date';
 import { TProps, mapStateToProps, questionInit, mapDispatchToProps, RenderLabel, IStateProps, IActionProps, IBaseInputProps } from './baseInput';
 import FormConditional from '../layout/formConditional';
 import { TState } from '../../store/appState';
-import { TFormQuestion, TFormQuestionValueType } from 'AuctorForm/core/form.core';
+import { TFormQuestion, TFormQuestionValueType } from '../core/form.core';
 
 /**
  * Form DatePicker Component

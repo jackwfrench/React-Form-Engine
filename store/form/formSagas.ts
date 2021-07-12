@@ -1,9 +1,9 @@
 import { put, takeEvery } from 'redux-saga/effects';
 import { ICreateFormAction, ISaveQuestionValueAction } from './formActions';
-import { validateQuestion } from 'AuctorForm/core/form.validate';
+import { validateQuestion } from '../../core/form.validate';
 import * as FormActionTypes from './formActionTypes';
-import { store } from '../../../store/appState';
-import { TFormQuestion } from 'AuctorForm/core/form.core';
+import { store } from '@Store/appState';
+import { TFormQuestion } from '../../core/form.core';
 
 /**
  * Question validate saga is run every time 'form/saveQuestionValue' is dispatched

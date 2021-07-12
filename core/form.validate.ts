@@ -1,7 +1,7 @@
 import { TForm, TFormQuestion, TFormQuestionValueType } from './form.core';
 import { TTextRule, TValidateInputStatus } from './form.rules';
 import parsePhoneNumber from 'libphonenumber-js';
-import AppStore from 'store/appState';
+import AppStore from '@Store/appState';
 import * as ActionTypes from '../store/form/formActionTypes';
 import { evaluateConditional } from '../input/baseInput';
 

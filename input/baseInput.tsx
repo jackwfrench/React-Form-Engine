@@ -1,8 +1,8 @@
 import React from 'react';
 import { Dispatch } from 'redux';
 import { store, TState } from '../../store/appState';
-import { TFormQuestion, TForm, TFormQuestionValue } from 'AuctorForm/core/form.core';
-import { TFormQuestionConditional } from 'AuctorForm/core/form.rules';
+import { TFormQuestion, TForm, TFormQuestionValue } from '@AuctorForm/core/form.core';
+import { TFormQuestionConditional } from '@AuctorForm/core/form.rules';
 import * as actionTypes from '../store/form/formActionTypes';
 import * as FormSelectors from '../store/form/formSelectors';
 
