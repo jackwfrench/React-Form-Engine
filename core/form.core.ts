@@ -23,10 +23,7 @@ export type TForm = {
   formType: string;
   questions: Array<TFormQuestion>;
   dateCreated: Date;
-  authorisation: string;
-  licenseNumber: string;
   validForm: boolean;
-  clientId?: string;
-  locationId?: string;
+  identifiers: Array<{identifier: string, value: string}>
 };
 

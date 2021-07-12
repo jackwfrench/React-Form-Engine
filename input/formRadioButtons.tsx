@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { TFormQuestion, TFormQuestionValue, TFormQuestionValueType } from '../../../core/form/form.core';
+import { TFormQuestion, TFormQuestionValue, TFormQuestionValueType } from 'AuctorForm/core/form.core';
 import { TProps, mapDispatchToProps, mapStateToProps, questionInit, IStateProps, IActionProps, IBaseInputProps } from './baseInput';
 import FormConditional from '../layout/formConditional';
 import { Radio, Form } from 'antd';
-import { TState } from '../../store/appState';
+import { TState } from 'store/appState';
 import { RadioChangeEvent } from 'antd/lib/radio';
 
 interface IFormRadioButtonProps extends TProps {

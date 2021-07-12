@@ -1,3 +1,13 @@
+/**
+ * FORM STRUCTURE
+ */
+export * as AFCore from './core/form.core';
+export * as AFStore from './store/form';
+
+
+/**
+ * FORM LAYOUT AND UI
+ */
 import FormSection from './layout/formSection';
 import FormWrapper from './layout/formWrapper';
 import FormHeader from './layout/formHeader';
@@ -10,7 +20,7 @@ import FormInput from './input/formInput';
 import FormInputNumber from './input/formInputNumber';
 import FormTextArea from './input/formTextArea';
 import FormRadioButtons from './input/formRadioButtons';
-import FormSubmit from '../views/user/form/tmv/tmvFormSubmit';
+// import FormSubmit from '../views/user/form/tmv/tmvFormSubmit';
 
 // form layout components
 export { FormSection as Section};
@@ -27,6 +37,6 @@ export { FormInputNumber as InputNumber };
 export { FormTextArea as TextArea};
 export { FormRadioButtons as RadioButtons };
 export { FormDatePicker as DatePicker };
-export { FormSubmit as Submit };
+// export { FormSubmit as Submit };
 
 

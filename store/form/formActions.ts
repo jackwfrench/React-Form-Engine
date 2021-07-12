@@ -1,5 +1,5 @@
-import { TFormQuestion, TFormQuestionValueType } from '../../../../core/form/form.core';
-import { TValidateInputStatus } from '../../../../core/form/form.rules';
+import { TFormQuestion, TFormQuestionValueType } from 'AuctorForm/core/form.core';
+import { TValidateInputStatus } from 'AuctorForm/core/form.rules';
 import * as actionTypes from './formActionTypes';
 
 export interface IQuestionAction extends IAction {

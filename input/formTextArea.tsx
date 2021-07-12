@@ -4,7 +4,7 @@ import { Input, Form } from 'antd';
 import { RenderLabel, questionInit,IActionProps, IBaseInputProps, IStateProps, mapDispatchToProps, mapStateToProps, TProps } from './baseInput';
 import FormConditional from '../layout/formConditional';
 import { TState } from '../../store/appState';
-import { TFormQuestion, TFormQuestionValueType } from '../../../core/form/form.core';
+import { TFormQuestion, TFormQuestionValueType } from 'AuctorForm/core/form.core';
 
 const { TextArea } = Input;
 
@@ -41,11 +41,12 @@ class FormTextArea extends React.Component<ITextAreaProps> {
           <Form.Item
             validateStatus={this.props.selectors.getQuestion.rules.inputStatus}
             help={this.props.selectors.getQuestion.rules.helpMessage}
+            label={this.props.label}
+            required={this.props.required}
             style={{
               margin: 0
             }}
           >
-            <RenderLabel label={this.props.label} />
             <TextArea rows={this.props.rows || 3} />
           </Form.Item>
         </div>

@@ -1,7 +1,7 @@
-import { TFormQuestion, TFormQuestionValueType } from './form.core';
+import { TForm, TFormQuestion, TFormQuestionValueType } from './form.core';
 import { TTextRule, TValidateInputStatus } from './form.rules';
 import parsePhoneNumber from 'libphonenumber-js';
-import { store } from '../../store/appState';
+import AppStore from 'store/appState';
 import * as ActionTypes from '../store/form/formActionTypes';
 import { evaluateConditional } from '../input/baseInput';
 
@@ -73,7 +73,7 @@ export const validateQuestion = (question: TFormQuestion): IValidateQuestion => 
  * @param questions 
  * @returns 
  */
-export const validateForm = (): boolean => {
+export const validateForm = (store: typeof AppStore): boolean => {
 	
   // extract questions from state
   const questions = store.getState().form.questions;
@@ -108,13 +108,13 @@ export interface IFormQuestionSubmit {
  * Prepares the form to be submitted to DB
  * @returns IFormQuestionSubmit[]
  */
-export const formPrepareSubmit = (): IFormQuestionSubmit[] => {
+export const formPrepareSubmit = (formState: TForm): IFormQuestionSubmit[] => {
 
   // array to hold questions
   const reducedQuestions: Array<IFormQuestionSubmit> = [];
 
   // extract questions from state
-  const questions = store.getState().form.questions;
+  const questions = formState.questions;
 
   questions.forEach(question => {
 

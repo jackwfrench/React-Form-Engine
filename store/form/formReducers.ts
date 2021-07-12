@@ -1,4 +1,4 @@
-import { TForm } from '../../../../core/form/form.core';
+import { TForm } from 'AuctorForm/core/form.core';
 import { TFormActions, IQuestionAction, ISaveQuestionValueAction } from './formActions';
 import * as actionTypes from './formActionTypes';
 import { initialState } from '../../../store/appState';

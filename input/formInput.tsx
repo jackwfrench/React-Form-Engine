@@ -5,8 +5,8 @@ import { SizeType } from 'antd/lib/config-provider/SizeContext';
 import { TProps, mapStateToProps, mapDispatchToProps, IStateProps, IActionProps, IBaseInputProps, questionInit } from './baseInput';
 import FormConditional from '../layout/formConditional';
 import { TState } from '../../store/appState';
-import { TFormQuestion, TFormQuestionValueType } from '../../../core/form/form.core';
-import { TFormQuestionValue } from '../../../core/form/form.core';
+import { TFormQuestion, TFormQuestionValueType } from 'AuctorForm/core/form.core';
+import { TFormQuestionValue } from 'AuctorForm/core/form.core';
 
 interface IFormInputProps extends TProps {
     size?: SizeType,
