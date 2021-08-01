@@ -4,6 +4,7 @@
 export const CLEAR_FORM = 'form/clearForm';
 export const CLEAR_FORM_VALUES ='form/clearFormValues';
 export const CREATE_FORM = 'form/create';
+export const UPDATE_VALID_FORM = 'form/updateValidForm';
 
 /**
  * FORM QUESTION ACTION TYPES

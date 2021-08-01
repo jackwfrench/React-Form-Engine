@@ -69,14 +69,13 @@ export const validateQuestion = (question: TFormQuestion): IValidateQuestion => 
 };
 
 /**
- * v
  * @param questions 
  * @returns 
  */
-export const validateForm = (store: typeof AppStore): boolean => {
+export const validateForm = (formState: TForm): boolean => {
 	
   // extract questions from state
-  const questions = store.getState().form.questions;
+  const questions = formState.questions;
 
   let isValidForm = true;
 
@@ -91,7 +90,8 @@ export const validateForm = (store: typeof AppStore): boolean => {
     if (!success) {
       isValidForm = false;
     }
-    store.dispatch({type: ActionTypes.UPDATE_QUESTION_VALIDATION_STATUS, payload: {questionId: question.id, inputStatus, helpMessage}});
+    
+    AppStore.dispatch({type: ActionTypes.UPDATE_QUESTION_VALIDATION_STATUS, payload: {questionId: question.id, inputStatus, helpMessage}});
   });
 
   return isValidForm;

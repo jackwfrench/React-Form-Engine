@@ -27,7 +27,6 @@ class FormDatePicker extends React.Component<TProps> {
         inputStatus: '',
         helpMessage: ''
       }
-      
     };
 
     this.props.actions.createQuestion(fillQuestion);

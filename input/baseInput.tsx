@@ -4,6 +4,7 @@ import { store, TState } from '../../store/appState';
 import { TFormQuestion, TForm, TFormQuestionValue } from '@AuctorForm/core/form.core';
 import { TFormQuestionConditional } from '../core/form.rules';
 import * as actionTypes from '../store/form/formActionTypes';
+import FormActions from '@AuctorForm/store/form/formActions';
 import * as FormSelectors from '../store/form/formSelectors';
 
 /**
@@ -16,6 +17,7 @@ export interface IActionProps {
     saveQuestionValue: (questionId: number, value: TFormQuestionValue) => void;
     clearForm: () => void;
     clearFormValues: () => void;
+    createForm: () => void;
   };
 }
 
@@ -61,7 +63,7 @@ export const mapStateToProps = (state: TState, props: IBaseInputProps): IStatePr
   return { 
     form: state.form,
     selectors: {
-      getQuestion: FormSelectors.getQuestionSelector(state.form, props.id),
+      getQuestion: FormSelectors.getQuestion(state.form, props.id),
     }
   };
 };
@@ -78,7 +80,8 @@ export const mapDispatchToProps = (dispatch: Dispatch): IActionProps => {
       saveQuestion: (question: TFormQuestion) => dispatch({ type: actionTypes.SAVE_QUESTION, payload: question }),
       createQuestion: (question: TFormQuestion) => dispatch({ type: actionTypes.CREATE_QUESTION, payload: question }),
       saveQuestionValue: (questionId: number, value: TFormQuestionValue) => dispatch({ type: actionTypes.SAVE_QUESTION_VALUE, payload: {questionId, value}}),
-      clearFormValues: () => dispatch({ type: actionTypes.CLEAR_FORM_VALUES })
+      clearFormValues: () => dispatch({ type: actionTypes.CLEAR_FORM_VALUES }),
+      createForm: () => dispatch(FormActions.createForm())
     }
   };
 };

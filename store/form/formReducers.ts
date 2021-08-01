@@ -1,8 +1,7 @@
 import { TForm } from '@AuctorForm/core/form.core';
-import { TFormActions, IQuestionAction, ISaveQuestionValueAction } from './formActions';
+import { TFormActions, IQuestionAction, ISaveQuestionValueAction, IQuestionValidationStatus, IUpdateValidFormAction } from './formActions';
 import * as actionTypes from './formActionTypes';
 import { initialState } from '../../../store/appState';
-import { IQuestionValidationStatus } from './formActions';
 
 const formReducer = (state: TForm, action: TFormActions): TForm => {
   switch (action.type) {
@@ -59,6 +58,13 @@ const formReducer = (state: TForm, action: TFormActions): TForm => {
         const clearQuestion = {...question, value: null};
         return clearQuestion;
       })
+    };
+  }
+  case actionTypes.UPDATE_VALID_FORM: {
+    const formAction = action as IUpdateValidFormAction;
+    return {
+      ...state,
+      validForm: formAction.payload.validForm
     };
   }
   default: {

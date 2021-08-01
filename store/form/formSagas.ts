@@ -1,15 +1,19 @@
-import { put, takeEvery } from 'redux-saga/effects';
-import { ICreateFormAction, ISaveQuestionValueAction } from './formActions';
-import { validateQuestion } from '../../core/form.validate';
+import { put, takeEvery, select, call } from 'redux-saga/effects';
+import { ISaveQuestionValueAction }from './formActions';
+import { validateForm, validateQuestion } from '../../core/form.validate';
 import * as FormActionTypes from './formActionTypes';
 import { store } from '@Store/appState';
-import { TFormQuestion } from '../../core/form.core';
+import { TForm, TFormQuestion } from '../../core/form.core';
+import FormActions from './formActions';
+import { getForm } from './formSelectors';
+import * as FormService from '@Service/form.service';
 
 /**
  * Question validate saga is run every time 'form/saveQuestionValue' is dispatched
  * @param action 
  */
 function* questionValidate(action: ISaveQuestionValueAction) {
+
   // continue the action
   put({ type: FormActionTypes.SAVE_QUESTION_VALUE, payload: action.payload });
   
@@ -27,9 +31,23 @@ function* questionValidate(action: ISaveQuestionValueAction) {
   });
 }
 
-function* createForm(action: ICreateFormAction) {
-  yield action.payload;
+function* createForm() {
+
+  // retrieve formState
+  const formState: TForm = yield select(getForm);
+
+  // validate Form
+  const validForm = validateForm(formState);
+
+  yield put(FormActions.updateValidForm(validForm));
+
+  if (validForm) {
+    // save form
+    yield call(FormService.createForm, formState);
+  }
 }
+
+  
 
 function* formSaga(): Generator {
   yield takeEvery(FormActionTypes.SAVE_QUESTION_VALUE, questionValidate);

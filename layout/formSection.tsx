@@ -7,7 +7,7 @@ import Form from 'antd/lib/form/Form';
 
 interface ISectionProps {
   layout?: 'horizontal' | 'vertical';
-  noBorder?: boolean
+  embedded?: boolean
 }
 
 class FormSection extends React.Component<TProps & ISectionProps> {
@@ -15,11 +15,11 @@ class FormSection extends React.Component<TProps & ISectionProps> {
     return (
       <FormConditional {...this.props}>
         <div style={{
-          border: this.props.noBorder ? '0px' : '1px solid silver',
-          borderRadius: this.props.noBorder ? '0px' : '3px',
+          border: this.props.embedded ? '0px' : '1px solid silver',
+          borderRadius: this.props.embedded ? '0px' : '3px',
           backgroundColor: 'white',
-          padding: this.props.noBorder ? 0 : 30,
-          marginBottom: this.props.noBorder ? 0 : 30
+          padding: this.props.embedded ? 0 : 30,
+          marginBottom: this.props.embedded ? 0 : 30
         }}>
           <Form layout={this.props.layout || 'vertical'}>
             {this.props.children}
